@@ -1,0 +1,2 @@
+list = [10, 3.5, "Python", True]
+print(list)
