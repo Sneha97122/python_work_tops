@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    let email = document.forms["form"]["email"].value;
+
+    if (!email.includes("@")) {
+        alert("Invalid Email");
+        return false;
+    }
+}
+</script>
+</head>
+
+<body>
+<form onsubmit="return validateForm()">
+    <input type="text" id="phone" placeholder="Phone">
+    <input type="email" id="email" placeholder="Email">
+    <button type="submit">Register</button>
+</form>
+
+<script src="/static/js/script.js"></script>
+
+</body>
+</html>

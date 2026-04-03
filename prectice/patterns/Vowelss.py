@@ -9,6 +9,9 @@
 # consonent_count=0
 
 # for ch in sentence:
+#     if ch ==" ":
+#         continue
+    
 #     if ch in vowels:
 #         vowel_count+=1 
 #         if ch not in present_vowels:
@@ -90,9 +93,33 @@ print("------------------------------------------------")
 print("---------------------------------------------------")
 
 #Fibonaccie series 
-num=int(input("Enter the number:"))
-a,b=0,1 
-for i in range(num):
-    print(a,end=" ")
-    a,b=b,a+b 
+# num=int(input("Enter the number:"))
+# a,b=0,1 
+# for i in range(num):
+#     print(a,end=" ")
+#     a,b=b,a+b 
+
+
+
+sentence = input("Enter the sentence: ").lower()
+vowels = "aeiou"
+
+vowel_count = 0
+consonant_count = 0
+present_vowels = set()
+present_consonants = set()
+
+for ch in sentence:
+    if ch.isalpha():
+        if ch in vowels:
+            vowel_count += 1
+            present_vowels.add(ch)
+        else:
+            consonant_count += 1
+            present_consonants.add(ch)
+
+print("Present vowels:", list(present_vowels))
+print("Total vowels:", vowel_count)
+print("Present consonants:", list(present_consonants))
+print("Total consonants:", consonant_count)
     

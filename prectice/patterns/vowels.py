@@ -82,23 +82,23 @@ print("------------------------")
 
 print("------------------------")
 
-#armstrong number
+# armstrong number
 
-# num=int(input("enter the number"))
-# sum=0
-# temp=num
-# digites=len(str(num))
+num=int(input("enter the number"))
+sum=0
+temp=num
+digites=len(str(num))
 
-# while temp>0:
-#     digit=temp%10
-#     sum=sum+digit ** digites
-#     temp//=10
+while temp>0:
+    digit=temp%10
+    sum=sum+digit ** digites
+    temp//=10
 
-# if sum==num:
-#     print("armstrong number")
+if sum==num:
+    print("armstrong number")
 
-# else:
-#     print("not")
+else:
+    print("not")
 
 print("------------------------")
 
