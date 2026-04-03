@@ -2,10 +2,26 @@
 <html>
 <head>
     <title>Doctors</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+    </style>
+
 </head>
 <body>
 
-<h2>Doctor List</h2>
+<h1>Doctor List</h1>
 
 {% for doctor in doctors %}
     <p>{{ doctor.name }} - {{ doctor.specialty }}</p>
@@ -13,3 +29,4 @@
 
 </body>
 </html>
+
