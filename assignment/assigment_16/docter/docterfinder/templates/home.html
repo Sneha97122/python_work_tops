@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Doctor Finder</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <h1>Welcome to Doctor Finder</h1>
-    <a href="/doctors/">View Doctors</a>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-center mb-4">Doctor List</h2>
+
+<div class="row">
+    {% for doctor in doctors %}
+    <div class="col-md-4">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <h5 class="card-title">{{ doctor.name }}</h5>
+                <p class="card-text">
+                    <strong>Specialty:</strong> {{ doctor.specialty }}<br>
+                    <strong>Phone:</strong> {{ doctor.phone }}<br>
+                    <strong>Email:</strong> {{ doctor.email }}
+                </p>
+
+                <a href="/delete/{{doctor.id}}/" class="btn btn-danger btn-sm">Delete</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

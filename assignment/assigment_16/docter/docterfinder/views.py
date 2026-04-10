@@ -1,19 +1,27 @@
-from django.shortcuts import render,redirect
-from docterfinder.models import *
+from django.shortcuts import render, redirect
+from .models import Doctor
 
 def home(request):
-    return render(request, 'home.html')
-
-def doctor_list(request):
     doctors = Doctor.objects.all()
-    return render(request, 'doctor_list.html', {'doctors': doctors})
-
-def contact(request):
-    return render(request, 'contact.html')
+    return render(request, 'home.html', {'doctors': doctors})
 
 def add_doctor(request):
     if request.method == "POST":
         name = request.POST['name']
-        Doctor.objects.create(name=name)
-        return redirect('/doctors/')
-    return render(request, 'add.html')
+        specialty = request.POST['specialty']
+        phone = request.POST['phone']
+        email = request.POST['email']
+
+        Doctor.objects.create(
+            name=name,
+            specialty=specialty,
+            phone=phone,
+            email=email
+        )
+        return redirect('/')
+
+    return render(request, 'register.html')
+
+def delete_doctor(request, id):
+    Doctor.objects.get(id=id).delete()
+    return redirect('/')

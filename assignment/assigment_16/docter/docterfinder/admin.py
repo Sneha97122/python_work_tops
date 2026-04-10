@@ -1,4 +1,8 @@
 from django.contrib import admin
 from docterfinder.models  import Doctor
 
-admin.site.register(Doctor)
+
+class DoctorAdmin(admin.ModelAdmin):
+    list_display = ('name', 'specialty', 'email', 'phone')
+
+admin.site.register(Doctor, DoctorAdmin)
